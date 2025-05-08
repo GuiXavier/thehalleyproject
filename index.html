@@ -30,16 +30,6 @@
       font-size: 2rem;
       font-weight: bold;
     }
-    a.button {
-      margin-top: 2rem;
-      padding: 12px 20px;
-      background-color: #00c9ff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-family: inherit;
-    }
   </style>
 </head>
 <body>
@@ -47,10 +37,6 @@
   <p>Halley's Comet returns approximately every 76 years. Its next predicted perihelion will occur on <strong>July 28, 2061</strong>. Below is a real-time countdown to its return.</p>
   
   <div id="countdown">Calculating...</div>
-
-  <a class="button" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='DES%3D1P%3BCAP%3BNOFRAG'&OBJ_DATA=YES&MAKE_EPHEM=YES&EPHEM_TYPE=OBSERVER&CENTER=500@399&START_TIME=2061-07-28&STOP_TIME=2061-07-29&STEP_SIZE=1%20d&QUANTITIES=1,9,20" target="_blank">
-    See NASA Horizons Data
-  </a>
 
   <script>
     const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
