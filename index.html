@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contagem Regressiva - Cometa Halley</title>
+  <title>Halley's Comet Countdown</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Times New Roman', Times, serif;
       background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
       color: #fff;
       display: flex;
@@ -18,13 +18,13 @@
       text-align: center;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 2rem;
-      max-width: 600px;
+      max-width: 650px;
     }
     #countdown {
       font-size: 2rem;
@@ -38,35 +38,43 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      font-family: inherit;
     }
   </style>
 </head>
 <body>
-  <h1>Cometa Halley</h1>
-  <p>O cometa Halley retorna a cada ~76 anos. Sua próxima aparição estimada será em <strong>28 de julho de 2061</strong>. Abaixo, você acompanha a contagem regressiva em tempo real.</p>
-  <div id="countdown">Calculando...</div>
+  <h1>Halley's Comet</h1>
+  <p>Halley's Comet returns approximately every 76 years. Its next predicted perihelion will occur on <strong>July 28, 2061</strong>. Below is a real-time countdown to its return.</p>
+  
+  <div id="countdown">Calculating...</div>
 
-  <a class="button" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='1P/Halley'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2061-07-28'&STOP_TIME='2061-07-29'&STEP_SIZE='1 d'&QUANTITIES='1,9,20,23,24,29'" target="_blank">Ver posição no dia da aparição</a>
+  <a class="button" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='1P/Halley'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2061-07-28'&STOP_TIME='2061-07-29'&STEP_SIZE='1 d'&QUANTITIES='1,9,20,23,24,29'" target="_blank">See NASA Horizons Data</a>
 
   <script>
     const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
-      const diff = targetDate - now;
+      let diff = targetDate - now;
 
       if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "O cometa Halley chegou!";
+        document.getElementById("countdown").innerHTML = "Halley's Comet has arrived!";
         return;
       }
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const totalSeconds = Math.floor(diff / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+
+      const years = Math.floor(totalDays / 365.25);
+      const days = totalDays % Math.floor(365.25);
+      const hours = totalHours % 24;
+      const minutes = totalMinutes % 60;
+      const seconds = totalSeconds % 60;
 
       document.getElementById("countdown").innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        `${years} years, ${days} days, ${hours}h ${minutes}m ${seconds}s`;
     }
 
     updateCountdown();
