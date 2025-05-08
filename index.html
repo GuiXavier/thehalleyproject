@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Halley Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contagem Regressiva - Cometa Halley</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    #countdown {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    a.button {
+      margin-top: 2rem;
+      padding: 12px 20px;
+      background-color: #00c9ff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bem-vindo ao The Halley Project</h1>
-  <p>Este site é dedicado ao cometa Halley, seu histórico e suas próximas passagens.</p>
+  <h1>Cometa Halley</h1>
+  <p>O cometa Halley retorna a cada ~76 anos. Sua próxima aparição estimada será em <strong>28 de julho de 2061</strong>. Abaixo, você acompanha a contagem regressiva em tempo real.</p>
+  <div id="countdown">Calculando...</div>
+
+  <a class="button" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='1P/Halley'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2061-07-28'&STOP_TIME='2061-07-29'&STEP_SIZE='1 d'&QUANTITIES='1,9,20,23,24,29'" target="_blank">Ver posição no dia da aparição</a>
+
+  <script>
+    const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "O cometa Halley chegou!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
