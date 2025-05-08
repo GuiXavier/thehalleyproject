@@ -48,7 +48,9 @@
   
   <div id="countdown">Calculating...</div>
 
-  <a class="button" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='1P/Halley'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2061-07-28'&STOP_TIME='2061-07-29'&STEP_SIZE='1 d'&QUANTITIES='1,9,20,23,24,29'" target="_blank">See NASA Horizons Data</a>
+  <a class="button" href="https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='DES=1P;CAP;NOFRAG'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2061-07-28'&STOP_TIME='2061-07-29'&STEP_SIZE='1 d'&QUANTITIES='1,9,20,23,24,29'" target="_blank">
+    See NASA Horizons Data
+  </a>
 
   <script>
     const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
@@ -68,7 +70,7 @@
       const totalDays = Math.floor(totalHours / 24);
 
       const years = Math.floor(totalDays / 365.25);
-      const days = totalDays % Math.floor(365.25);
+      const days = Math.floor(totalDays % 365.25);
       const hours = totalHours % 24;
       const minutes = totalMinutes % 60;
       const seconds = totalSeconds % 60;
