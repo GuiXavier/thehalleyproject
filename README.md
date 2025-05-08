@@ -41,6 +41,7 @@ For more information, visit [Creative Commons Attribution 4.0 International Lice
 
 ![CC BY 4.0](https://mirrors.creativecommons.org/presskit/icons/by.svg) ![CC 4.0](https://mirrors.creativecommons.org/presskit/icons/cc.svg)
 
+Additionally, the metadata for this project is embedded in an **XMP file**, which includes information about the **license** and **attribution**. This XMP file is included with the project to further specify the terms of the license and credit the author, **Paulo Xavier**.
 
 ## Contributing
 
