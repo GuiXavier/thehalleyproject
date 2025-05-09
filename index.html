@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Halley's Comet Countdown: Time Until Its Return in 2061.</title>
+  <title>Halley's Comet Countdown: Time Until Its Return in 2061</title>
   <meta name="description" content="Track the exact real-time countdown to the next appearance of Halley's Comet, expected on July 28, 2061. Discover how much time is left until its return.">
   <style>
     body {
@@ -13,10 +13,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       margin: 0;
       text-align: center;
+      padding: 20px;
+    }
+    nav {
+      margin-bottom: 2rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     h1 {
       font-size: 2.8rem;
@@ -38,6 +52,14 @@
   </style>
 </head>
 <body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="articles/history.html">History</a>
+    <a href="articles/observation.html">Observation</a>
+  </nav>
+
   <h1>Halley's Comet</h1>
   <h2>Next Halley's Comet Passage: Real-Time Countdown</h2>
 
@@ -80,6 +102,5 @@
 
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
-  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>

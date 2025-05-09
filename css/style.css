@@ -1,0 +1,51 @@
+/* style.css - Visual identity for The Halley Project */
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+h1, h2 {
+  color: #00d4ff;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+}
+
+ul {
+  margin-left: 1.5rem;
+}
+
+a {
+  color: #00c9ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
