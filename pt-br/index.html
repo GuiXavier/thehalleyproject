@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contagem Regressiva para o Cometa Halley: Retorno em 2061</title>
+  <meta name="description" content="Acompanhe em tempo real a contagem regressiva para a próxima aparição do Cometa Halley, prevista para 28 de julho de 2061. Descubra quanto tempo falta para seu retorno.">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="standard">
+
+  <!-- Menu de Navegação -->
+  <nav>
+    <a href="/pt-br/index.html">Início</a>
+    <a href="/pt-br/articles/history.html">História</a>
+    <a href="/pt-br/articles/observation.html">Observação</a>
+    <a href="/index.html" style="margin-left:auto;">🇺🇸 Inglês</a>
+  </nav>
+
+  <main>
+    <h1>Cometa Halley</h1>
+    <h2>Próxima Passagem do Cometa Halley: Contagem Regressiva em Tempo Real</h2>
+
+    <div id="countdown">Calculando...</div>
+
+    <!-- Imagem do cometa Halley com referência -->
+    <figure style="text-align: center;">
+    <img src="../images/halley.jpg" 
+       alt="Foto do Cometa Halley" 
+       style="display: block; margin: 0 auto 1rem auto; max-width: 100%; height: auto; border-radius: 8px;">
+    <figcaption style="font-size: 0.95rem; color: #cccccc;">
+      NASA Jet Propulsion Laboratory, California Institute of Technology —
+    <a href="https://www.jpl.nasa.gov/news/photometrically-calibrated-images-of-halleys-comet-captured" target="_blank" style="color: #00c9ff; text-decoration: none;">NASA</a>
+    </figcaption>
+    </figure>
+
+    <p>O Cometa Halley, um dos cometas mais famosos, retorna ao Sistema Solar interior aproximadamente a cada 76 anos. O próximo periélio — o ponto mais próximo do Sol em sua órbita — está previsto para o <strong>dia 28 de julho de 2061</strong>. Esta página apresenta uma contagem regressiva ao vivo para que você acompanhe seu tão aguardado retorno.</p>
+    
+    <p>Se você está se perguntando quando o Cometa Halley voltará ou está procurando um cronômetro preciso, está no lugar certo. Este temporizador mostra exatamente quanto tempo falta para sua próxima aparição no céu. Mantenha-se curioso e marque no seu calendário um dos eventos celestes mais esperados do século XXI.</p>
+
+  </main>
+
+  <script>
+    const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      let diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "O Cometa Halley chegou!";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+
+      const years = Math.floor(totalDays / 365.25);
+      const days = Math.floor(totalDays % 365.25);
+      const hours = totalHours % 24;
+      const minutes = totalMinutes % 60;
+      const seconds = totalSeconds % 60;
+
+      document.getElementById("countdown").innerHTML =
+        `${years} anos, ${days} dias, ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
+</body>
+</html>

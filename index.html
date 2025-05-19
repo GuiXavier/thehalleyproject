@@ -5,47 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Halley's Comet Countdown: Time Until Its Return in 2061</title>
   <meta name="description" content="Track the exact real-time countdown to the next appearance of Halley's Comet, expected on July 28, 2061. Discover how much time is left until its return.">
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif;
-      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Language Redirect -->
+  <!--
+  <script>
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang.startsWith("pt")) {
+      window.location.href = "/pt-br/";
     }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      max-width: 750px;
-    }
-    #countdown {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-  </style>
+  </script>
+  -->
 </head>
-<body>
-  <h1>Halley's Comet</h1>
-  <h2>Next Halley's Comet Passage: Real-Time Countdown</h2>
+<body class="standard">
 
-  <p>Halley's Comet, one of the most famous comets, returns to the inner Solar System approximately every 76 years. The next perihelion the point in its orbit closest to the Sun is expected on <strong>July 28, 2061</strong>. This page features a live Halley's Comet countdown to help you track its long-awaited return.</p>
-  
-  <p>If you're wondering when Halley's Comet will come back or are searching for a Halley's Comet chronometer, you've come to the right place. This timer gives you the precise time left until its next appearance in the night sky. Stay curious and mark your calendar for one of the most anticipated celestial events of the 21st century.</p>
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="articles/history.html">History</a>
+    <a href="articles/observation.html">Observation</a>
+    <a href="/pt-br/index.html" style="margin-left:auto;">🇧🇷 Portuguese</a>
+  </nav>
 
-  <div id="countdown">Calculating...</div>
+  <main>
+    <h1>Halley's Comet</h1>
+    <h2>Next Halley's Comet Passage: Real-Time Countdown</h2>
+
+    <div id="countdown">Calculating...</div>
+
+    <!-- Halley's Comet Image with reference -->
+    <figure style="text-align: center;">
+      <img src="images/halley.jpg" 
+           alt="Image of Halley's Comet" 
+           style="display: block; margin: 0 auto 1rem auto; max-width: 100%; height: auto; border-radius: 8px;">
+      <figcaption style="font-size: 0.95rem; color: #cccccc;">
+        NASA Jet Propulsion Laboratory, California Institute of Technology —
+        <a href="https://www.jpl.nasa.gov/news/photometrically-calibrated-images-of-halleys-comet-captured" target="_blank" style="color: #00c9ff; text-decoration: none;">NASA</a>
+      </figcaption>
+    </figure>
+    
+    <p>Halley's Comet, one of the most famous comets, returns to the inner Solar System approximately every 76 years. The next perihelion—the point in its orbit closest to the Sun—is expected on <strong>July 28, 2061</strong>. This page features a live Halley's Comet countdown to help you track its long-awaited return.</p>
+    
+    <p>If you're wondering when Halley's Comet will come back or are searching for a Halley's Comet chronometer, you've come to the right place. This timer gives you the precise time left until its next appearance in the night sky. Stay curious and mark your calendar for one of the most anticipated celestial events of the 21st century.</p>
+    
+  </main>
 
   <script>
     const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
@@ -80,6 +83,5 @@
 
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
-  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
