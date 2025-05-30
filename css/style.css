@@ -1,10 +1,10 @@
 /* Combined Style Sheet: Fourmilab-inspired styling + Halley Project visuals */
 
 /* ========== GENERAL BODY LAYOUT ==========
-   Combining .standard and Halley body layout
+    Combining .standard and Halley body layout
 */
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'EB Garamond', serif; /* MODIFICADO */
   background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
   color: #ffffff;
   margin: 0;
@@ -17,19 +17,15 @@ body {
 body.standard {
   margin-left: 15%;
   margin-right: 10%;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF;  <-- Linha removida anteriormente */
   color: #ffffff;
 }
 
-body.items {
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: #FFFFFF;
-  color: #000000;
-}
+/* body.items { <-- Bloco inteiro removido anteriormente 
+} */
 
 /* ========== NAVIGATION ==========
-   Blending visual + float support
+    Blending visual + float support
 */
 nav {
   margin-bottom: 2rem;
@@ -44,6 +40,9 @@ nav a, a:link, a:visited {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
+  /* Se a Garamond parecer muito fina nos links da navegação, 
+     você pode querer especificar um font-weight aqui, 
+     ex: font-weight: 600; ou 700; (se você carregou esses pesos do Google Fonts) */
 }
 
 a:hover {
@@ -77,6 +76,9 @@ main {
 
 h1, h2 {
   color: #00d4ff;
+  /* A fonte EB Garamond será aplicada aqui por herança do body.
+     Se quiser um peso diferente para os títulos (ex: mais negrito),
+     você pode adicionar font-weight: 700; (ou o peso que carregou) aqui. */
 }
 
 h1 {
@@ -165,14 +167,15 @@ p.copying {
   margin-right: 5%;
   text-align: justify;
   font-size: smaller;
-  font-family: sans-serif;
+  font-family: sans-serif; /* ATENÇÃO AQUI: Mantido como sans-serif. */
+  /* Se quiser Garamond aqui também, mude para: font-family: 'EB Garamond', serif; */
   font-style: italic;
 }
 
 /* ====== Countdown Style ====== */
 #countdown {
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: bold; /* A Garamond tem pesos 'bold' se você os carregou. */
   text-align: center;
   margin-top: 1.5rem;
 }
