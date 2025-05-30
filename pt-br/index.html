@@ -11,6 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="alternate" hreflang="en" href="https://thehalleyproject.org/index.html" />
+  <link rel="alternate" hreflang="pt-br" href="https://thehalleyproject.org/pt-br/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://thehalleyproject.org/index.html" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#0f2027">
+
 </head>
 <body class="standard">
 
@@ -27,7 +39,14 @@
     <h1>Cometa Halley</h1>
     <h2>Próxima Passagem do Cometa Halley: Contagem Regressiva em Tempo Real</h2>
 
-    <div id="countdown">Calculando...</div>
+    <div id="countdown"
+        aria-live="polite"
+        data-text-years="anos"
+        data-text-days="dias"
+        data-text-hours="h"
+        data-text-minutes="m"
+        data-text-seconds="s"
+        data-text-arrived="O Cometa Halley chegou!">Calculando...</div>
 
     <figure style="text-align: center;">
     <img src="/images/halley.jpg"
@@ -45,37 +64,8 @@
 
   </main>
 
-  <script>
-    const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      let diff = targetDate - now;
-
-      if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "O Cometa Halley chegou!";
-        return;
-      }
-
-      const totalSeconds = Math.floor(diff / 1000);
-      const totalMinutes = Math.floor(totalSeconds / 60);
-      const totalHours = Math.floor(totalMinutes / 60);
-      const totalDays = Math.floor(totalHours / 24);
-
-      const years = Math.floor(totalDays / 365.25);
-      const days = Math.floor(totalDays % 365.25);
-      const hours = totalHours % 24;
-      const minutes = totalMinutes % 60;
-      const seconds = totalSeconds % 60;
-
-      document.getElementById("countdown").innerHTML =
-        `${years} anos, ${days} dias, ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
-
+  
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
+  <script src="/js/countdown.js"></script>
 </body>
 </html>

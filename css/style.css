@@ -1,10 +1,8 @@
-/* Combined Style Sheet: Fourmilab-inspired styling + Halley Project visuals */
-
 /* ========== GENERAL BODY LAYOUT ==========
     Combining .standard and Halley body layout
 */
 body {
-  font-family: 'EB Garamond', serif; /* MODIFICADO */
+  font-family: 'EB Garamond', serif;
   background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
   color: #ffffff;
   margin: 0;
@@ -40,6 +38,7 @@ nav a, a:link, a:visited {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
+  transition: background-color 0.2s ease; /* TRANSIÇÃO ADICIONADA */
   /* Se a Garamond parecer muito fina nos links da navegação, 
      você pode querer especificar um font-weight aqui, 
      ex: font-weight: 600; ou 700; (se você carregou esses pesos do Google Fonts) */
@@ -54,6 +53,14 @@ a:hover {
 a:active {
   color: rgb(100%, 0%, 0%);
   background-color: rgb(30%, 30%, 100%);
+}
+
+/* ADICIONADO: Estilo para foco do teclado em links */
+a:focus {
+  outline: 2px solid #00c9ff; /* Contorno azul claro, mesma cor do .back-link */
+  /* Se o outline padrão do navegador já for bom o suficiente e você preferir,
+     pode adicionar 'outline-offset' para dar um pequeno espaço: */
+  /* outline-offset: 2px; */
 }
 
 /* Image-wrapped link style */
@@ -108,6 +115,9 @@ ul {
   margin-top: 2rem;
   font-size: 1.1rem;
   color: #00c9ff;
+  /* Se quiser que o .back-link também tenha a transição, 
+     adicione aqui: transition: background-color 0.2s ease; 
+     (mas ele não tem um :hover com background-color definido atualmente) */
 }
 
 /* ========== FLOATS + UTILITY ========== */
@@ -167,7 +177,7 @@ p.copying {
   margin-right: 5%;
   text-align: justify;
   font-size: smaller;
-  font-family: sans-serif; /* ATENÇÃO AQUI: Mantido como sans-serif. */
+  font-family: sans-serif; 
   /* Se quiser Garamond aqui também, mude para: font-family: 'EB Garamond', serif; */
   font-style: italic;
 }
@@ -175,7 +185,7 @@ p.copying {
 /* ====== Countdown Style ====== */
 #countdown {
   font-size: 2.8rem;
-  font-weight: bold; /* A Garamond tem pesos 'bold' se você os carregou. */
+  font-weight: bold; 
   text-align: center;
   margin-top: 1.5rem;
 }
