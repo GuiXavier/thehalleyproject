@@ -1,79 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contagem Regressiva para o Cometa Halley: Retorno em 2061</title>
-  <meta name="description" content="Acompanhe em tempo real a contagem regressiva para a próxima aparição do Cometa Halley, prevista para 28 de julho de 2061. Descubra quanto tempo falta para seu retorno.">
-  <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body class="standard">
-
-  <!-- Menu de Navegação -->
-  <nav>
-    <a href="/pt-br/index.html">Início</a>
-    <a href="/pt-br/articles/history.html">História</a>
-    <a href="/pt-br/articles/observation.html">Observação</a>
-    <a href="/index.html" style="margin-left:auto;">
-    <img src="/images/gb.png" alt="English" style="height: 0.8em; vertical-align: middle;"> English
-  </a>
-</nav>
-
-  <main>
-    <h1>Cometa Halley</h1>
-    <h2>Próxima Passagem do Cometa Halley: Contagem Regressiva em Tempo Real</h2>
-
-    <div id="countdown">Calculando...</div>
-
-    <!-- Imagem do cometa Halley com referência -->
-    <figure style="text-align: center;">
-    <img src="../images/halley.jpg" 
-       alt="Foto do Cometa Halley" 
-       style="display: block; margin: 0 auto 1rem auto; max-width: 100%; height: auto; border-radius: 8px;">
-    <figcaption style="font-size: 0.95rem; color: #cccccc;">
-      NASA Jet Propulsion Laboratory, California Institute of Technology —
-    <a href="https://www.jpl.nasa.gov/news/photometrically-calibrated-images-of-halleys-comet-captured" target="_blank" style="color: #00c9ff; text-decoration: none;">NASA</a>
-    </figcaption>
-    </figure>
-
-    <p>O Cometa Halley, um dos cometas mais famosos, retorna ao Sistema Solar interior aproximadamente a cada 76 anos. O próximo periélio — o ponto mais próximo do Sol em sua órbita — está previsto para o <strong>dia 28 de julho de 2061</strong>. Esta página apresenta uma contagem regressiva ao vivo para que você acompanhe seu tão aguardado retorno.</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva para o Cometa Halley - Retorno em 2061 | The Halley Project</title>
+    <meta name="description" content="Acompanhe em tempo real a contagem regressiva para a próxima aparição do Cometa Halley em 2061. A fonte definitiva de informações sobre o cometa mais famoso da história.">
+    <meta name="keywords" content="Cometa Halley, cometa 2061, astronomia, contagem regressiva, periélio, espaço">
     
-    <p>Se você está se perguntando quando o Cometa Halley voltará ou está procurando um cronômetro preciso, está no lugar certo. Este temporizador mostra exatamente quanto tempo falta para sua próxima aparição no céu. Mantenha-se curioso e marque no seu calendário um dos eventos celestes mais esperados do século XXI.</p>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contagem Regressiva para o Cometa Halley - Retorno em 2061">
+    <meta property="og:description" content="Acompanhe em tempo real a contagem regressiva para a próxima aparição do Cometa Halley em 2061.">
+    <meta property="og:image" content="/images/halley.jpg">
+    <meta property="og:url" content="https://thehalleyproject.org/pt-br/">
+    <meta property="og:type" content="website">
+    
+    <!-- Language alternates -->
+    <link rel="alternate" hreflang="en" href="https://thehalleyproject.org/index.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://thehalleyproject.org/index.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#0a0e27">
+</head>
+<body>
+    <!-- Background Stars -->
+    <div class="stars"></div>
 
-  </main>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/pt-br/" class="nav-logo">The Halley Project</a>
+            <div class="nav-links">
+                <a href="/pt-br/" class="active">Início</a>
+                <a href="/pt-br/about.html">Sobre</a>
+                <a href="/pt-br/articles/history.html">História</a>
+                <a href="/pt-br/articles/observation.html">Observação</a>
+                <a href="/" class="lang-switch">
+                    <img src="/images/gb.png" alt="English" class="lang-flag">
+                    <span>English</span>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-  <script>
-    const targetDate = new Date("2061-07-28T00:00:00Z").getTime();
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Cometa Halley</h1>
+        <p class="hero-subtitle">O cometa mais famoso retorna em 28 de julho de 2061</p>
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      let diff = targetDate - now;
+        <!-- Countdown -->
+        <div class="countdown-container">
+            <div class="countdown-label">Próximo Periélio: 28 de Julho de 2061</div>
+            <div id="countdown">
+                <!-- Countdown será preenchido pelo JavaScript -->
+                <noscript>
+                    <p>Por favor, habilite o JavaScript para ver a contagem regressiva ao vivo.</p>
+                </noscript>
+            </div>
+        </div>
+    </section>
 
-      if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "O Cometa Halley chegou!";
-        return;
-      }
+    <!-- Info Section
+    <section class="info-section">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🌠</div>
+                <h3>Significado Histórico</h3>
+                <p>O Cometa Halley tem sido observado e registrado pela humanidade por mais de 2.000 anos, aparecendo em textos antigos e obras de arte ao longo da história.</p>
+                <a href="/pt-br/articles/history.html" class="card-link">
+                    Conheça sua história
+                    <span>→</span>
+                </a>
+            </div>
 
-      const totalSeconds = Math.floor(diff / 1000);
-      const totalMinutes = Math.floor(totalSeconds / 60);
-      const totalHours = Math.floor(totalMinutes / 60);
-      const totalDays = Math.floor(totalHours / 24);
+            <div class="card">
+                <div class="card-icon">🔭</div>
+                <h3>Como Observar</h3>
+                <p>Visível a olho nu a cada 75-76 anos, o Cometa Halley oferece uma oportunidade espetacular de observação para entusiastas da astronomia em todo o mundo.</p>
+                <a href="/pt-br/articles/observation.html" class="card-link">
+                    Guia de observação
+                    <span>→</span>
+                </a>
+            </div>
 
-      const years = Math.floor(totalDays / 365.25);
-      const days = Math.floor(totalDays % 365.25);
-      const hours = totalHours % 24;
-      const minutes = totalMinutes % 60;
-      const seconds = totalSeconds % 60;
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Recursos Educacionais</h3>
+                <p>Informações completas para estudantes, professores e entusiastas da astronomia sobre este notável fenômeno celestial.</p>
+                <a href="/pt-br/articles/history.html" class="card-link">
+                    Explorar recursos
+                    <span>→</span>
+                </a>
+            </div>
+        </div> -->
 
-      document.getElementById("countdown").innerHTML =
-        `${years} anos, ${days} dias, ${hours}h ${minutes}m ${seconds}s`;
-    }
+        <!-- Featured Content -->
+        <div class="featured">
+            <h2>Por que o Cometa Halley é Importante</h2>
+            <p>
+                O Cometa Halley não é apenas um espetáculo celestial — é uma ponte entre passado e futuro, conectando gerações através do fascínio compartilhado. 
+                Seu retorno previsível a cada 76 anos o torna único entre os cometas, permitindo que a humanidade antecipe e se prepare para sua chegada.
+            </p>
+            
+            <div class="comet-image">
+                <img src="/images/halley.jpg" alt="Cometa Halley fotografado em 1986" loading="lazy">
+                <div class="image-caption">
+                    Cometa Halley capturado durante sua aproximação em 1986 • Crédito: NASA/JPL
+                </div>
+            </div>
+            
+            <p>
+                O próximo periélio em 2061 será um momento definidor para uma nova geração de observadores. Muitas pessoas vivas hoje testemunharão este evento uma ou duas vezes na vida, 
+                tornando-o um fenômeno astronômico verdadeiramente especial que transcende o interesse científico para se tornar uma experiência humana compartilhada.
+            </p>
+            
+            <a href="/pt-br/articles/history.html" class="cta-button">Explore o Guia Completo</a>
+        </div>
+    </section>
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The Halley Project • Sua fonte definitiva de informações sobre o Cometa Halley</p>
+        <p>Criado com paixão por astronomia e educação</p>
+    </footer>
 
-  <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
+    <!-- Scripts -->
+    <script>
+        // Define o idioma para o countdown
+        document.documentElement.lang = 'pt-BR';
+    </script>
+    <script src="/js/stars.js" defer></script>
+    <script src="/js/countdown.js" defer></script>
+    
+    <!-- Analytics (se você tiver) -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
 </body>
 </html>
