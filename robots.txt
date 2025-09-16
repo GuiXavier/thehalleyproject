@@ -1,2 +1,34 @@
+# The Halley Project - Robots.txt
+# Allow all crawlers
+
 User-agent: *
 Allow: /
+Crawl-delay: 0
+
+# Sitemap location
+Sitemap: https://thehalleyproject.org/sitemap.xml
+
+# Special rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: MJ12bot
+# Disallow: /
+# User-agent: AhrefsBot
+# Disallow: /
+# User-agent: SemrushBot
+# Disallow: /

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About The Halley Project | Mission & Vision</title>
+    <meta name="description" content="Learn about The Halley Project mission to become the definitive source for Halley's Comet information. Open-source, community-driven, and educational.">
+    
+    <!-- Language alternates -->
+    <link rel="alternate" hreflang="en" href="https://thehalleyproject.org/about.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://thehalleyproject.org/about.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#0a0e27">
+    
+    <style>
+        .about-hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .mission-card {
+            background: rgba(30, 58, 138, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .mission-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(30, 58, 138, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-button:hover {
+            background: rgba(6, 182, 212, 0.2);
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+        
+        .support-section {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .crypto-addresses {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .crypto-item {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .crypto-label {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-primary);
+        }
+        
+        .roadmap {
+            margin: 3rem 0;
+        }
+        
+        .roadmap-item {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background: rgba(30, 58, 138, 0.05);
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .roadmap-item h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Stars -->
+    <div class="stars"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">The Halley Project</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html" class="active">About</a>
+                <a href="/articles/history.html">History</a>
+                <a href="/articles/observation.html">Observation</a>
+                <a href="/pt-br/about.html" class="lang-switch">
+                    <img src="/images/br.png" alt="Portuguese" class="lang-flag">
+                    <span>Português</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <h1>About The Halley Project</h1>
+        <p class="hero-subtitle">Building the definitive resource for Halley's Comet enthusiasts worldwide</p>
+    </section>
+
+    <!-- Main Content -->
+    <article class="article-container">
+        <div class="article-content">
+            <h2>Our Mission</h2>
+            <p>
+                The Halley Project was created with a simple yet ambitious goal: to become the world's premier destination for accurate, accessible, and engaging information about Halley's Comet. We believe that this celestial phenomenon, which has captivated humanity for millennia, deserves a dedicated platform that combines scientific accuracy with educational accessibility.
+            </p>
+            
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">🎯</div>
+                    <h3>Accuracy First</h3>
+                    <p>Every piece of information is carefully researched and verified against scientific sources</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🌍</div>
+                    <h3>Global Access</h3>
+                    <p>Multi-language support to reach astronomy enthusiasts worldwide</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">📚</div>
+                    <h3>Educational Focus</h3>
+                    <p>Making complex astronomical concepts accessible to everyone</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🚀</div>
+                    <h3>Future Ready</h3>
+                    <p>Building tools and resources for the 2061 return</p>
+                </div>
+            </div>
+
+            <h2>Why This Project Exists</h2>
+            <p>
+                As the next return of Halley's Comet approaches in 2061, we recognized the need for a centralized, reliable source of information. Many existing resources are scattered, outdated, or overly technical. The Halley Project bridges this gap by providing:
+            </p>
+            <ul>
+                <li>Real-time countdown to the next perihelion</li>
+                <li>Historical context and cultural significance</li>
+                <li>Practical observation guides for amateur astronomers</li>
+                <li>Educational resources for teachers and students</li>
+                <li>A community platform for comet enthusiasts</li>
+            </ul>
+
+            <h2>Open Source & Community Driven</h2>
+            <p>
+                The Halley Project is an open-source initiative. We believe that knowledge about our universe should be freely accessible to all. Our codebase is publicly available, and we welcome contributions from developers, astronomers, educators, and enthusiasts worldwide.
+            </p>
+            <p>
+                Whether you're a professional astronomer with data to share, a developer who wants to improve our tools, a translator who can help us reach more people, or simply someone passionate about comets, there's a place for you in The Halley Project.
+            </p>
+
+            <div class="roadmap">
+                <h2>Project Roadmap</h2>
+                
+                <div class="roadmap-item">
+                    <h3>Phase 1: Foundation (Current)</h3>
+                    <p>Core website with countdown, historical information, and observation guides in English and Portuguese</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h3>Phase 2: Expansion (2025-2026)</h3>
+                    <p>Additional languages, interactive tools, and real-time comet position tracking using NASA APIs</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h3>Phase 3: Coming soon</h3> <!--Community (2026-2030)-->
+                    <p>Coming soon</p> <!--Forum for discussions, user-submitted observations, educational webinars, and mobile apps-->
+                </div>
+                
+                <div class="roadmap-item">
+                    <h3>Phase 4: Coming soon</h3> <!--Preparation (2030-2060)-->
+                    <p>Coming soon</p> <!--Comprehensive observation planning tools, global event coordination, and live streaming partnerships-->
+                </div>
+                
+                <div class="roadmap-item">
+                    <h3>Phase 5: The Return (2061)</h3>
+                    <p>Real-time coverage, community observations database, and historical documentation of the event</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2>Get Involved</h2>
+                <p>Join us in building the ultimate resource for Halley's Comet</p>
+                
+                <div class="contact-methods">
+                    <!-- These will be activated as you add them -->
+                    <a href="#" class="contact-button" style="opacity: 0.5; cursor: not-allowed;">
+                        📧 Email (Coming Soon)
+                    </a>
+                    <a href="#" class="contact-button" style="opacity: 0.5; cursor: not-allowed;">
+                        💻 GitHub (Coming Soon)
+                    </a>
+                    <!-- When ready, replace with:
+                    <a href="mailto:contact@thehalleyproject.org" class="contact-button">
+                        📧 Email Us
+                    </a>
+                    <a href="https://github.com/yourusername/halley-project" class="contact-button">
+                        💻 Contribute on GitHub
+                    </a>
+                    -->
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="support-section">
+                <h2>Support The Project</h2>
+                <p>
+                    The Halley Project is a labor of love, maintained by volunteers passionate about astronomy and education. 
+                    Your support helps us maintain servers, develop new features, and keep this resource free for everyone.
+                </p>
+                <p>
+                    If you find value in our work and would like to contribute, we accept cryptocurrency donations:
+                </p>
+                
+                <div class="crypto-addresses">
+                    <!-- Replace these with your actual addresses when ready -->
+                    <div class="crypto-item" style="opacity: 0.5;">
+                        <div class="crypto-label">Bitcoin (BTC)</div>
+                        <div>Address coming soon...</div>
+                    </div>
+                    <div class="crypto-item" style="opacity: 0.5;">
+                        <div class="crypto-label">Monero (XMR)</div>
+                        <div>Address coming soon...</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Looking to the Future</h2>
+            <p>
+                While 2061 may seem far away, the journey to that momentous return is just as important as the destination. 
+                Every day, we're working to ensure that when Halley's Comet graces our skies again, humanity will be ready 
+                with the knowledge, tools, and community to fully appreciate this cosmic visitor.
+            </p>
+            <p>
+                Join us in this multi-generational project. Together, we're not just counting down to a date—we're building 
+                a bridge between past and future, connecting all those who have looked up at Halley's Comet in wonder with 
+                those who will do so in the years to come.
+            </p>
+        </div>
+
+        <a href="/" class="back-button">
+            <span>←</span>
+            Back to Home
+        </a>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The Halley Project • Your definitive source for Halley's Comet information</p>
+        <p>An open-source project for astronomy enthusiasts worldwide</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/stars.js" defer></script>
+</body>
+</html>

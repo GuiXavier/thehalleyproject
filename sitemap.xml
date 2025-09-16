@@ -1,50 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Página principal (inglês) -->
+  <!-- Página principal (inglês) com alternativas de idioma -->
   <url>
-    <loc>https://thehalleyproject.org/index.html</loc>
-    <lastmod>2025-05-09</lastmod>
+    <loc>https://thehalleyproject.org/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/"/>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Seções em inglês -->
+  <!-- História em inglês -->
   <url>
     <loc>https://thehalleyproject.org/articles/history.html</loc>
-    <lastmod>2025-05-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/articles/history.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/articles/history.html"/>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Observação em inglês -->
   <url>
     <loc>https://thehalleyproject.org/articles/observation.html</loc>
-    <lastmod>2025-05-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/articles/observation.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/articles/observation.html"/>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Página principal em português -->
   <url>
-    <loc>https://thehalleyproject.org/pt-br/index.html</loc>
-    <lastmod>2025-05-09</lastmod>
+    <loc>https://thehalleyproject.org/pt-br/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/"/>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Seções em português -->
+  <!-- História em português -->
   <url>
     <loc>https://thehalleyproject.org/pt-br/articles/history.html</loc>
-    <lastmod>2025-05-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/articles/history.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/articles/history.html"/>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Observação em português -->
   <url>
     <loc>https://thehalleyproject.org/pt-br/articles/observation.html</loc>
-    <lastmod>2025-05-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/articles/observation.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/articles/observation.html"/>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+<!-- About page (English) -->
+<url>
+    <loc>https://thehalleyproject.org/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/about.html"/>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+
+<!-- About page (Portuguese) -->
+<url>
+    <loc>https://thehalleyproject.org/pt-br/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehalleyproject.org/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/about.html"/>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
 
 </urlset>
