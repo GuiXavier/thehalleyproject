@@ -1,72 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Halley's Comet Countdown: Time Until Its Return in 2061</title>
-  <meta name="description" content="Track the exact real-time countdown to the next appearance of Halley's Comet, expected on July 28, 2061. Discover how much time is left until its return.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="/css/style.css" />
-
-  <link rel="alternate" hreflang="en" href="https://thehalleyproject.org/index.html" />
-  <link rel="alternate" hreflang="pt-br" href="https://thehalleyproject.org/pt-br/index.html" />
-  <link rel="alternate" hreflang="x-default" href="https://thehalleyproject.org/index.html" />
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" href="/favicon.ico">
-  <meta name="theme-color" content="#0f2027">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halley's Comet Countdown - Next Return in 2061 | The Halley Project</title>
+    <meta name="description" content="Track the real-time countdown to Halley's Comet next appearance in 2061. The definitive source for information about the most famous comet in history.">
+    <meta name="keywords" content="Halley's Comet, comet 2061, astronomy, comet countdown, perihelion, space">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Halley's Comet Countdown - Next Return in 2061">
+    <meta property="og:description" content="Track the real-time countdown to Halley's Comet next appearance in 2061.">
+    <meta property="og:image" content="/images/halley.jpg">
+    <meta property="og:url" content="https://thehalleyproject.org">
+    <meta property="og:type" content="website">
+    
+    <!-- Language alternates -->
+    <link rel="alternate" hreflang="en" href="https://thehalleyproject.org/index.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://thehalleyproject.org/pt-br/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://thehalleyproject.org/index.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#0a0e27">
 </head>
-<body class="standard">
+<body>
+    <!-- Background Stars -->
+    <div class="stars"></div>
 
-<nav>
-  <a href="/index.html">Home</a>
-  <a href="/articles/history.html">History</a>
-  <a href="/articles/observation.html">Observation</a>
-  <a href="/pt-br/index.html" style="margin-left:auto;">
-    <img src="/images/br.png" alt="Português" style="height: 1em; vertical-align: middle;"> Portuguese
-  </a>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">The Halley Project</a>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/articles/history.html">History</a>
+                <a href="/articles/observation.html">Observation</a>
+                <a href="/pt-br/index.html" class="lang-switch">
+                    <img src="/images/br.png" alt="Portuguese" class="lang-flag">
+                    <span>Português</span>
+                </a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Halley's Comet</h1>
+        <p class="hero-subtitle">The most famous comet returns on July 28, 2061</p>
 
-  <main>
-    <h1>Halley's Comet</h1>
-    <h2>Next Halley's Comet Passage: Real-Time Countdown</h2>
+        <!-- Countdown -->
+        <div class="countdown-container">
+            <div class="countdown-label">Next Perihelion: July 28, 2061</div>
+            <div id="countdown">
+                <!-- Countdown will be populated by JavaScript -->
+                <noscript>
+                    <p>Please enable JavaScript to see the live countdown.</p>
+                </noscript>
+            </div>
+        </div>
+    </section>
 
-    <div id="countdown"
-      aria-live="polite"
-      data-text-years="years"
-      data-text-days="days"
-      data-text-hours="h"
-      data-text-minutes="m"
-      data-text-seconds="s"
-      data-text-arrived="Halley's Comet has arrived!">Calculating...</div>
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🌠</div>
+                <h3>Historical Significance</h3>
+                <p>Halley's Comet has been observed and recorded by humans for over 2,000 years, appearing in ancient texts and artwork throughout history.</p>
+                <a href="/articles/history.html" class="card-link">
+                    Learn about its history
+                    <span>→</span>
+                </a>
+            </div>
 
-    <figure style="text-align: center;">
-      <img src="/images/halley.jpg"
-           alt="Image of Halley's Comet" 
-           style="display: block; margin: 0 auto 1rem auto; max-width: 100%; height: auto; border-radius: 8px;">
-      <figcaption style="font-size: 0.95rem; color: #cccccc;">
-        NASA Jet Propulsion Laboratory, California Institute of Technology —
-        <a href="https://www.jpl.nasa.gov/news/photometrically-calibrated-images-of-halleys-comet-captured" target="_blank" style="color: #00c9ff; text-decoration: none;">NASA</a>
-      </figcaption>
-    </figure>
+            <div class="card">
+                <div class="card-icon">🔭</div>
+                <h3>How to Observe</h3>
+                <p>Visible to the naked eye every 75-76 years, Halley's Comet offers a spectacular viewing opportunity for astronomy enthusiasts worldwide.</p>
+                <a href="/articles/observation.html" class="card-link">
+                    Observation guide
+                    <span>→</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Educational Resources</h3>
+                <p>Comprehensive information for students, teachers, and astronomy enthusiasts about this remarkable celestial phenomenon.</p>
+                <a href="/articles/history.html" class="card-link">
+                    Explore resources
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Featured Content -->
+        <div class="featured">
+            <h2>Why Halley's Comet Matters</h2>
+            <p>
+                Halley's Comet is not just a celestial spectacle—it's a bridge between past and future, connecting generations through shared wonder. 
+                Its predictable return every 76 years makes it unique among comets, allowing humanity to anticipate and prepare for its arrival.
+            </p>
+            
+            <div class="comet-image">
+                <img src="/images/halley.jpg" alt="Halley's Comet photographed in 1986" loading="lazy">
+                <div class="image-caption">
+                    Halley's Comet captured during its 1986 approach • Credit: NASA/JPL
+                </div>
+            </div>
+            
+            <p>
+                The next perihelion in 2061 will be a defining moment for a new generation of observers. Many people alive today will witness this once or twice in their lifetime event, 
+                making it a truly special astronomical phenomenon that transcends scientific interest to become a shared human experience.
+            </p>
+            
+            <a href="/articles/history.html" class="cta-button">Explore the Complete Guide</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The Halley Project • Your definitive source for Halley's Comet information</p>
+        <p>Created with passion for astronomy and education</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/stars.js" defer></script>
+    <script src="/js/countdown.js" defer></script>
     
-    <p>Halley's Comet, one of the most famous comets, returns to the inner Solar System approximately every 76 years. The next perihelion—the point in its orbit closest to the Sun—is expected on <strong>July 28, 2061</strong>. This page features a live Halley's Comet countdown to help you track its long-awaited return.</p>
-    
-    <p>If you're wondering when Halley's Comet will come back or are searching for a Halley's Comet chronometer, you've come to the right place. This timer gives you the precise time left until its next appearance in the night sky. Stay curious and mark your calendar for one of the most anticipated celestial events of the 21st century.</p>
-    
-  </main>
-  
-
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
-  <script src="/js/countdown.js"></script> 
+    <!-- Analytics (if you have) -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "30a99d2f7467410bb427670fdf00be1a"}'></script>
 </body>
 </html>
