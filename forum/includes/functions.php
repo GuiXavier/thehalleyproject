@@ -13,7 +13,7 @@ require_once __DIR__ . '/config.php';
 function get_articles(int $page = 1, int $per_page = 10, ?int $category_id = null, string $status = 'published'): array {
     $offset = ($page - 1) * $per_page;
     $params = [];
-    $where  = ['a.status = ?'];
+    $where  = ['a.status = ?', 'a.deleted_at IS NULL'];
     $params[] = $status;
 
     if ($category_id) {
@@ -38,7 +38,7 @@ function get_articles(int $page = 1, int $per_page = 10, ?int $category_id = nul
                u.username AS author, u.id AS author_id,
                c.slug AS category_slug,
                c.name_en AS category_en, c.name_pt AS category_pt, c.icon AS category_icon,
-               (SELECT COUNT(*) FROM comments cm WHERE cm.article_id = a.id AND cm.is_hidden = 0) AS comment_count
+               (SELECT COUNT(*) FROM comments cm WHERE cm.article_id = a.id AND cm.is_hidden = 0 AND cm.deleted_at IS NULL) AS comment_count
         FROM articles a
         JOIN users u ON a.user_id = u.id
         JOIN categories c ON a.category_id = c.id
@@ -67,7 +67,7 @@ function get_article_by_slug(string $slug): ?array {
         FROM articles a
         JOIN users u ON a.user_id = u.id
         JOIN categories c ON a.category_id = c.id
-        WHERE a.slug = ?
+        WHERE a.slug = ? AND a.deleted_at IS NULL
         LIMIT 1
     ");
     $stmt->execute([$slug]);
@@ -160,7 +160,7 @@ function get_comments(int $article_id): array {
                u.username, u.id AS user_id, u.role
         FROM comments c
         JOIN users u ON c.user_id = u.id
-        WHERE c.article_id = ? AND c.is_hidden = 0
+        WHERE c.article_id = ? AND c.is_hidden = 0 AND c.deleted_at IS NULL
         ORDER BY c.created_at ASC
     ");
     $stmt->execute([$article_id]);
@@ -230,7 +230,7 @@ function get_pending_articles(): array {
                u.username AS author
         FROM articles a
         JOIN users u ON a.user_id = u.id
-        WHERE a.status = 'review'
+        WHERE a.status = 'review' AND a.deleted_at IS NULL
         ORDER BY a.created_at ASC
     ");
     $stmt->execute();
@@ -257,9 +257,9 @@ function forum_stats(): array {
     $stats = db()->query("
         SELECT 
             (SELECT COUNT(*) FROM users WHERE is_active = 1) AS total_users,
-            (SELECT COUNT(*) FROM articles WHERE status = 'published') AS total_articles,
-            (SELECT COUNT(*) FROM comments WHERE is_hidden = 0) AS total_comments,
-            (SELECT COUNT(*) FROM articles WHERE status = 'review') AS pending_articles
+            (SELECT COUNT(*) FROM articles WHERE status = 'published' AND deleted_at IS NULL) AS total_articles,
+            (SELECT COUNT(*) FROM comments WHERE is_hidden = 0 AND deleted_at IS NULL) AS total_comments,
+            (SELECT COUNT(*) FROM articles WHERE status = 'review' AND deleted_at IS NULL) AS pending_articles
     ")->fetch();
     return $stats;
 }
