@@ -171,7 +171,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- Body -->
     <div class="article-body">
-        <?= parse_markdown($article['body']) ?>
+        <?= render_article_body($article['body']) ?>
     </div>
 
     <!-- Author box -->

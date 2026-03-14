@@ -322,3 +322,52 @@ function parse_markdown(string $text): string {
 
     return $text;
 }
+
+// Sanitizar HTML do editor rico (permitir formatação segura, bloquear XSS)
+function clean_html(string $html): string {
+    // Tags permitidas
+    $allowed = '<h1><h2><h3><p><br><strong><b><em><i><u><s><strike>'
+             . '<ul><ol><li><blockquote><pre><code>'
+             . '<a><img><span><div><sub><sup><hr>';
+
+    $html = strip_tags($html, $allowed);
+
+    // Limpar atributos perigosos (onclick, onerror, javascript:, etc.)
+    $html = preg_replace('/\s*on\w+\s*=\s*["\'][^"\']*["\']/i', '', $html);
+    $html = preg_replace('/javascript\s*:/i', '', $html);
+
+    // Permitir style apenas com propriedades seguras (cor, alinhamento, tamanho)
+    $html = preg_replace_callback('/\s*style\s*=\s*"([^"]*)"/i', function($m) {
+        $safe_props = [];
+        $props = explode(';', $m[1]);
+        foreach ($props as $prop) {
+            $prop = trim($prop);
+            if (empty($prop)) continue;
+            if (preg_match('/^(color|background-color|text-align|font-size)\s*:/i', $prop)) {
+                // Bloquear expression() e url() dentro de valores
+                if (!preg_match('/expression|url\s*\(/i', $prop)) {
+                    $safe_props[] = $prop;
+                }
+            }
+        }
+        return empty($safe_props) ? '' : ' style="' . implode('; ', $safe_props) . '"';
+    }, $html);
+
+    // Garantir que links tenham rel="noopener"
+    $html = preg_replace('/<a\s+(?![^>]*rel=)/i', '<a rel="noopener" ', $html);
+
+    // Garantir que imagens tenham loading="lazy"
+    $html = preg_replace('/<img\s+(?![^>]*loading=)/i', '<img loading="lazy" ', $html);
+
+    return $html;
+}
+
+// Renderizar corpo do artigo (detecta se é HTML rico ou Markdown legado)
+function render_article_body(string $body): string {
+    // Se contém tags HTML do editor rico, é HTML — só limpar
+    if (preg_match('/<(p|h[1-3]|ul|ol|blockquote|strong|em)\b/i', $body)) {
+        return clean_html($body);
+    }
+    // Senão, é Markdown legado — converter
+    return parse_markdown($body);
+}
