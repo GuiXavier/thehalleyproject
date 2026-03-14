@@ -17,7 +17,7 @@ if (DEBUG_MODE) {
 
 // ── Constantes do Site ───────────────────────────────────────
 define('SITE_NAME',     'The Halley Project');
-define('SITE_URL',      'https://thehalleyproject.org');
+define('SITE_URL',      'http://192.168.1.15');
 define('FORUM_URL',     SITE_URL . '/forum');
 define('FORUM_PATH',    dirname(__DIR__));       // /var/www/html/forum
 define('UPLOADS_PATH',  FORUM_PATH . '/uploads');
@@ -70,7 +70,7 @@ function init_session(): void {
     if (session_status() === PHP_SESSION_ACTIVE) return;
 
     ini_set('session.cookie_httponly', 1);
-    ini_set('session.cookie_secure',  1);        // HTTPS
+    ini_set('session.cookie_secure',  0);        // HTTPS
     ini_set('session.use_strict_mode', 1);
     ini_set('session.cookie_samesite', 'Lax');
     ini_set('session.gc_maxlifetime', SESSION_LIFETIME);
