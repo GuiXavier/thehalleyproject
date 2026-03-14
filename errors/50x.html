@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance | The Halley Project</title>
+    <meta http-equiv="refresh" content="30">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#0a0e27">
+    <style>
+        :root {
+            --primary-dark: #0a0e27;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(148, 163, 184, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .stars {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+        }
+        .star {
+            position: absolute; width: 2px; height: 2px;
+            background: white; border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+
+        nav {
+            position: relative; z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.25rem; font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; text-decoration: none;
+        }
+
+        .error-container {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            position: relative; z-index: 10; padding: 2rem;
+        }
+        .error-content { text-align: center; max-width: 520px; }
+
+        .error-icon {
+            font-size: 4rem; margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .error-title {
+            font-size: 1.6rem; font-weight: 600;
+            margin-bottom: 0.75rem; color: var(--text-primary);
+        }
+        .error-message {
+            color: var(--text-secondary); line-height: 1.7;
+            margin-bottom: 1.5rem; font-size: 1rem;
+        }
+
+        .status-bar {
+            background: rgba(30, 58, 138, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .status-text {
+            color: var(--accent-cyan); font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+        }
+        .spinner {
+            width: 16px; height: 16px;
+            border: 2px solid var(--border-color);
+            border-top-color: var(--accent-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .countdown-refresh {
+            color: var(--text-muted); font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-home {
+            display: inline-block; padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white; text-decoration: none; border-radius: 9999px;
+            font-weight: 600; transition: all 0.3s;
+        }
+        .btn-home:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3); }
+
+        footer {
+            position: relative; z-index: 10;
+            border-top: 1px solid var(--border-color);
+            padding: 1rem; text-align: center;
+            color: var(--text-muted); font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">The Halley Project</a>
+        </div>
+    </nav>
+
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">🔧</div>
+            <h1 class="error-title">Briefly Under Maintenance</h1>
+            <p class="error-message">
+                Our server is performing a quick update — like a comet adjusting its orbit.
+                Everything will be back in a moment.
+            </p>
+            <p class="error-message" style="font-size: 0.9rem; color: var(--text-muted);">
+                Nosso servidor está realizando uma atualização rápida.
+                Tudo voltará ao normal em instantes.
+            </p>
+
+            <div class="status-bar">
+                <div class="status-text">
+                    <div class="spinner"></div>
+                    <span>Auto-refreshing in <strong id="timer">30</strong>s</span>
+                </div>
+                <div class="countdown-refresh">
+                    This page refreshes automatically / Esta página atualiza automaticamente
+                </div>
+            </div>
+
+            <a href="/" class="btn-home">🏠 Try Home Page</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Halley Project</p>
+    </footer>
+
+    <script>
+        // Stars
+        (function() {
+            const c = document.getElementById('stars');
+            for (let i = 0; i < 60; i++) {
+                const s = document.createElement('div');
+                s.className = 'star';
+                s.style.left = Math.random()*100+'%';
+                s.style.top = Math.random()*100+'%';
+                s.style.width = (Math.random()*2+1)+'px';
+                s.style.height = s.style.width;
+                s.style.animationDuration = (Math.random()*3+2)+'s';
+                s.style.animationDelay = (Math.random()*3)+'s';
+                c.appendChild(s);
+            }
+        })();
+        // Countdown
+        let t = 30;
+        setInterval(() => {
+            t--;
+            document.getElementById('timer').textContent = t;
+            if (t <= 0) location.reload();
+        }, 1000);
+    </script>
+</body>
+</html>
