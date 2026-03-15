@@ -1,4 +1,4 @@
-<?php
+artigos<?php
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/functions.php';
 
@@ -13,7 +13,7 @@ $stmt = db()->prepare("
            c.icon AS category_icon
     FROM articles a
     JOIN categories c ON a.category_id = c.id
-    WHERE a.user_id = ?
+    WHERE a.user_id = ? AND a.deleted_at IS NULL
     ORDER BY a.created_at DESC
 ");
 $stmt->execute([current_user_id()]);

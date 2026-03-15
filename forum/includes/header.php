@@ -67,7 +67,7 @@ $_full_title = $_page_title . ' | ' . SITE_NAME;
                     </a>
                 <?php endif; ?>
 
-                <a href="<?= current_lang() === 'pt-BR' ? '/forum/' : '/pt-br/forum/' ?>" class="lang-switch">
+                <a href="#" onclick="event.preventDefault(); fetch('/forum/lang.php?lang=<?= current_lang() === 'pt-BR' ? 'en' : 'pt-BR' ?>').then(()=>location.reload())" class="lang-switch">
                     <img src="/images/<?= current_lang() === 'pt-BR' ? 'gb.png' : 'br.png' ?>" 
                          alt="<?= current_lang() === 'pt-BR' ? 'English' : 'Português' ?>" 
                          class="lang-flag">

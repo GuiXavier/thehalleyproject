@@ -70,6 +70,6 @@ if (!move_uploaded_file($file['tmp_name'], $dest)) {
 }
 
 // URL pública
-$url = FORUM_URL . '/uploads/' . $filename;
+$url = '/forum/uploads/' . $filename;
 
 echo json_encode(['ok' => true, 'url' => $url, 'filename' => $filename]);
