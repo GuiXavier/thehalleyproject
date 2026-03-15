@@ -117,12 +117,20 @@ function login_session(int $id, string $username, string $role): void {
     $_SESSION['role']      = $role;
     $_SESSION['logged_in'] = true;
     $_SESSION['_created']  = time();
+
+    // Cookie indicador para nginx saber que o usuário está logado
+    // (nginx bypassa cache quando vê este cookie)
+    setcookie('halley_logged', '1', time() + SESSION_LIFETIME, '/', '', false, false);
 }
 
 // ── Logout ───────────────────────────────────────────────────
 function logout(): void {
     init_session();
     $_SESSION = [];
+
+    // Remover cookie de login (nginx volta a servir cache)
+    setcookie('halley_logged', '', time() - 3600, '/');
+
     if (ini_get('session.use_cookies')) {
         $p = session_get_cookie_params();
         setcookie(session_name(), '', time() - 42000,
