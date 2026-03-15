@@ -74,7 +74,7 @@ function init_session(): void {
     if (session_status() === PHP_SESSION_ACTIVE) return;
 
     ini_set('session.cookie_httponly', 1);
-    ini_set('session.cookie_secure',  1);        // HTTPS
+    ini_set('session.cookie_secure',  0);        // HTTPS
     ini_set('session.use_strict_mode', 1);
     ini_set('session.cookie_samesite', 'Lax');
     ini_set('session.gc_maxlifetime', SESSION_LIFETIME);
