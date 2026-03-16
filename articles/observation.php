@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../forum/includes/config.php';
 $page_title = t("How to Observe Halley's Comet | The Halley Project", "Como Observar o Cometa Halley | The Halley Project");
 $active_page = 'observation';
 

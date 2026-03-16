@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../forum/includes/config.php';
 $page_title = t("History of Halley's Comet | The Halley Project", "História do Cometa Halley | The Halley Project");
 $active_page = 'history';
 

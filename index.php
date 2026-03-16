@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/forum/includes/config.php';
 $page_title = t(
     "Halley's Comet Countdown - Next Return in 2061 | The Halley Project",
     "Contagem Regressiva do Cometa Halley - Próximo Retorno em 2061 | The Halley Project"

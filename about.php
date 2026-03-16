@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/forum/includes/config.php';
 $page_title = t("About The Halley Project | Mission & Vision", "Sobre o The Halley Project | Missão e Visão");
 $active_page = 'about';
 $extra_css = '
